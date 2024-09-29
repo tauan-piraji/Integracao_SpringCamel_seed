@@ -1,0 +1,87 @@
+spring:
+  jackson:
+    default-property-inclusion: NON_EMPTY
+    date-format: com.fasterxml.jackson.databind.util.ISO8601DateFormat
+    deserialization:
+      fail-on-unknown-properties: false
+    mapper:
+      accept-case-insensitive-properties: true
+  datasource:
+    mysql:
+      jdbc-url: jdbc:sqlserver://XXXXXXX;encrypt=true;trustServerCertificate=true;
+      username: XXXXXXX
+      password: XXXXXXX
+      driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    oracle:
+      jdbc-url: jdbc:oracle:thin:@XXXXXXX
+      username: XXXXXXX
+      password: XXXXXXX
+      driver-class-name: oracle.jdbc.driver.OracleDriver
+  jpa:
+    show_sql: true
+    database-platform: org.hibernate.dialect.SQLServer2012Dialect
+    hibernate:
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyComponentPathImpl
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate:
+        show_sql: false
+        format_sql: false
+  rabbitmq:
+    host: rabbitmq-test.XXXXXXX
+    port: XXXXXXX
+    username: XXXXXXX
+    password: XXXXXXX
+
+integration:
+  max-redeliveries: 5
+  exchange: bus.seed
+  concurrent-consumers: 1
+  queues:
+    sandbox:
+      routingkey: seed.sandbox
+      queue: seed.sandbox.default.queue
+      deadletter: seed.sandbox.error.queue
+      parkinglot: seed.sandbox.parkinglot.queue
+      ttl: 30000
+
+camel:
+  springboot:
+    main-run-controller: true
+    name: integrador-seed
+  component:
+    servlet:
+      mapping:
+        enabled: true
+        context-path: /*
+    sftp:
+      host: hom.app.xxxxx.com.br
+      port: xxxxx
+      username: xxxxx
+      password: xxxxx
+#    smb:
+#      host: XXXXX
+#      share: /Sistema%20Nexxera
+#      path: /skyline/pagamento/gnre pagamento
+#      domain: XXXXX
+#      username: XXXXXX
+#      password: XXXXXX
+
+server:
+  address: 0.0.0.0
+management:
+  endpoint:
+    health:
+      enabled: true
+  endpoints:
+    enabled-by-default: false
+  server:
+    address: 0.0.0.0
+    port: 8081
+
+vertem:
+  lastDataUpdateControlId: VERTEM_VENDAS_DATA_CONTROL
+  token: Basic bGFtb2RhLW1pZGRsZXdhcmU6M2VhMDEwYzEtNjBiMy00ZDVjLWFhYTYtODAwYzE3MDlhZjc3
+  URLs:
+    authorizer: https://10.101.0.75/authorizer/v1/benefit
