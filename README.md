@@ -2,19 +2,17 @@
 
 Este projeto é uma seed de integração desenvolvida com Spring Boot e Apache Camel 4,
 visando servir como base e padrão de desenvolvimento para projetos.
-Ele tem o mínimo necessário de várias tecnologias para sustentar os mais diversos cenários que poderiam surgir em um 
-desenvolvimento de integração.
+Ele tem o mínimo necessário de várias tecnologias para sustentar os mais diversos cenários que poderiam surgir em um desenvolvimento de integração.
 
 ## Tecnologias Utilizadas
 
 ### Spring Boot
 
-Spring Boot é um framework que facilita a configuração e o desenvolvimento de aplicações Java, oferecendo fun
-ionalidades prontas para uso, como injeção de dependência, segurança, endpoints web e integração com diversos serviços.
+Spring Boot é um framework que facilita a configuração e o desenvolvimento de aplicações Java, oferecendo funionalidades prontas para uso, como injeção de dependência, segurança, endpoints web e integração com diversos serviços.
 
 ### Apache Camel
 
-Apache Camel é um framework de integração que facilita a construção de rotas de integração, transformando dados entre diferentes formatos e transportes de maneira fluida. No projeto, utilizamos
+Apache Camel é um framework de integração que facilita a construção de rotas de integração, transformando dados entre diferentes formatos e transportes de maneira fluida. No projeto, utilizamos:
 
 - camel-spring-boot-starter: Inicializador do Apache Camel com suporte ao Spring Boot.
 - camel-jackson-starter: Para serialização/deserialização de JSON usando Jackson.
@@ -28,7 +26,7 @@ Apache Camel é um framework de integração que facilita a construção de rota
 
 ### Banco de dados
 
-O proeto suporta conexão com dois bancos simultaneos, e tem as dependencias necessarias para conxão com mysql e oracle.
+O projeto suporta conexão com dois bancos simultaneamente, e tem as dependências necessárias para conexão com mysql e oracle.
 
 - spring-boot-starter-data-jpa e spring-boot-starter-jdbc: Para o uso de JPA (Java Persistence API) e JDBC (Java Database Connectivity) no acesso a bancos de dados.
 - mssql-jdbc: Driver JDBC para conexão com Microsoft SQL Server.
