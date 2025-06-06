@@ -4,7 +4,63 @@ Este projeto é uma seed de integração desenvolvida com Spring Boot e Apache C
 visando servir como base e padrão de desenvolvimento para projetos.
 Ele tem o mínimo necessário de várias tecnologias para sustentar os mais diversos cenários que poderiam surgir em um desenvolvimento de integração.
 
-## Tecnologias Utilizadas
+---
+
+## 📁 **Estrutura do Projeto**
+```plaintext
+Integracao_SpringCamel_seed/
+├── src/
+│   ├── main/
+│   │   ├── java/integrador/seed/
+│   │   |   ├──  busines/
+│   │   |   |   ├──  oracleRepositories/                 # Repositories Oracle
+│   │   |   |   ├──  processors/                         # processamento dos dados nas rotas camel
+│   │   |   |   ├──  repositories/                       # Repositories MySQL
+│   │   |   |   ├──  services/                           # Services de comunicação com o banco
+│   │   |   ├──  camel/
+│   │   |   |   ├──  CamelRouter.java                    # Rotas Camel
+│   │   |   |   ├──  ConsumoRabbitMqRouter.java          # Consumo do RabbitMQ
+│   │   |   |   ├──  DeadletterRouter.java               # Retentativar e envio para DeadLetter
+│   │   |   |   ├──  StrpRouter.java                     # Comunicação com arquivo por sftp
+│   │   |   ├──  core/
+│   │   |   |   ├──  DbConfig/                           # Configuração dos bancos oracles e MySql
+│   │   |   |   ├──  rabbitmq/                           # Configuração da mensageria
+│   │   |   |   ├──  AbstractDeadLetterProcessor.java    # Controle de fila RabbitMq
+│   │   |   |   ├──  CamelConfig.java                    # Configurações do camel
+│   │   |   ├──  models/
+│   │   |   |   ├──  dtos/                               # Entidades costumizadas
+│   │   |   |   ├──  entities/                           # Entidades MySql
+│   │   |   |   ├──  entitiesOracle/                     # Entidades Oracle
+│   │   |   |   ├──  enums/                              # Enums para controle refinado
+│   │   |   ├──  Application.java                        # Main java
+│   │   ├── resources/ 
+│   │   |   ├── spring/  
+│   │   |   |   ├── camel-context.xml                    # Definição das rotas da API
+│   │   |   ├── application.yaml                         # Variáveis de ambiente
+│   ├── configuration/                                   # Configurações
+├── .gitignore                                           # Arquivos ignorados pelo Git
+├── Dockerfile                                           # Compacta e executa em container
+├── local.sh                                             # Script execucao
+├── README.md                                            # Documentação do projeto
+└── pom.xml                                              # Controle de versão
+```
+
+---
+
+## 🛠 **Tecnologias Utilizadas**
+
+| Tecnologia             | Logotipo                                                                   |
+| ---------------------- | -------------------------------------------------------------------------- |
+| **Java 17**            | ![Java](https://img.shields.io/badge/Java-17-blue)                         |
+| **Spring Boot**        | ![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.2.0-brightgreen) |
+| **Apache Camel**       | ![Camel](https://img.shields.io/badge/Camel-4.2.0-orange)                  |
+| **QueryDSL**           | ![QueryDSL](https://img.shields.io/badge/QueryDSL-5.1.0-lightgrey)         |
+| **MapStruct**          | ![MapStruct](https://img.shields.io/badge/MapStruct-1.5.3.Final-yellow)    |
+| **Jackson**            | ![Jackson](https://img.shields.io/badge/Jackson-2.15.3-blueviolet)         |
+| **Lombok**             | ![Lombok](https://img.shields.io/badge/Lombok-1.18.24-red)                 |
+| **MSSQL JDBC Driver**  | ![MSSQL](https://img.shields.io/badge/SQL_Server-JDBC-blue)                |
+| **Oracle JDBC Driver** | ![Oracle](https://img.shields.io/badge/Oracle-JDBC-orange)                 |
+
 
 ### Spring Boot
 
